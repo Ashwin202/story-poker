@@ -15,10 +15,6 @@
     --background-end-rgb: 0, 0, 0;
   }
 } */
-body {
-  color: #141C1E;
-  background: #141C1E;
-}
 @layer base {
   :root {
     --background: 0 0% 100%;
