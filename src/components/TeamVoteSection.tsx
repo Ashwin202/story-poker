@@ -20,12 +20,14 @@ const TeamVoteSection = (props: PersonProps) => {
 		<ScrollArea className="h-full w-full p-3 rounded-md border">
 			{props.userdata.map((props, index) => (
 				<>
-					<div key={index} className="flex flex-row justify-between gap-3">
-						<div className="flex flex-row justify-between gap-3">
-							<TeamVote isActive={props.active}  firstName = {props.firstName} lastName = {props.lastName}/>
-							<span>{props.firstName} {props.lastName}</span>
+					<div key={index} className="flex flex-row justify-between content-center gap-3 text-xs">
+						<div className="flex justify-center content-between gap-3 ">
+							<TeamVote isActive={props.active} firstName={props.firstName} lastName={props.lastName} />
+							<div className="flex flex-wrap content-center">
+								{props.firstName} {props.lastName}
+							</div>
 						</div>
-						<span>{props.value !== 0 && props.value && <Badge>{props.value}</Badge>}</span>
+						<div className="flex flex-wrap content-center">{props.value !== 0 && props.value && <Badge className="text-sm">{props.value}</Badge>}</div>
 					</div>
 					<Separator className="my-2" />
 				</>
