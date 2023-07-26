@@ -2,7 +2,7 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const TeamJoin = () => {
+const TeamJoin: React.FC = () => {
 	return (
 		<div className="flex justify-center items-center h-screen flex-col">
 			<h1 className="mb-3 font-bold text-4xl">JOIN THE GAME</h1>
