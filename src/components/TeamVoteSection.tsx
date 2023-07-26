@@ -9,7 +9,7 @@ type PersonProps = {
 	userdata: {
 		id: number;
 		firstName: string;
-		lastName: string;
+		lastName?: string;
 		active: boolean;
 		value?: number;
 	}[];
@@ -22,7 +22,7 @@ const TeamVoteSection = (props: PersonProps) => {
 				<>
 					<div key={index} className="flex flex-row justify-between content-center gap-3 text-xs">
 						<div className="flex justify-center content-between gap-3 ">
-							<TeamVote isActive={props.active} firstName={props.firstName} lastName={props.lastName} />
+							<TeamVote isActive={props.active} firstName={props.firstName} lastName={props.lastName ? props.lastName : undefined} />
 							<div className="flex flex-wrap content-center">
 								{props.firstName} {props.lastName}
 							</div>

@@ -4,7 +4,7 @@ import TopBar from "@/components/TopBar";
 
 const page = () => {
 	const userdata = [
-		{ id: 1, firstName: "Ashok", lastName: "Mohanakumar", active: true, value: 1 },
+		{ id: 1, firstName: "Ashok", active: true, value: 1 },
 		{ id: 2, firstName: "Michael", lastName: "Teddy", active: true, value: 0 },
 		{ id: 3, firstName: "Steve", lastName: "Waltin", active: true, value: 0 },
 		{ id: 4, firstName: "Shabeer", lastName: "Mohammed", active: false, value: 0 },
@@ -17,8 +17,8 @@ const page = () => {
 			<div className=" w-full h-16"><TopBar /></div>
 			<div className="flex w-full h-[calc(100%-12rem)] ">
 				<div className="flex flex-col w-5/6 p-2 ">
-					<div className="flex w-full text-black bg-blue-100  h-1/2 ">SPRINT DETAILS</div>
-					<div className="flex w-full text-black bg-green-100 h-1/2 ">CARD SELECTOR</div>
+					<div className="flex w-full text-black   h-1/2 ">SPRINT DETAILS</div>
+					<div className="flex w-full text-black  h-1/2 ">CARD SELECTOR</div>
 				</div>
 				<div className="flex w-1/6 p-2">
 					<TeamVoteSection userdata={userdata} />
