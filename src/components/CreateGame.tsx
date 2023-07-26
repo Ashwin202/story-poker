@@ -1,30 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import * as Dialog from "@radix-ui/react-dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/components/ui/use-toast";
 
-const CreateGame = () => {
-   console.log("Create Game");
+const CreateGame: React.FC = () => {
+   const { toast } = useToast();
+
+   const [sprintNo, setSprintNo] = useState<string | number>("");
+   const [sprintName, setSprintName] = useState<any>("");
+   const addGame = (): void => {
+      if (sprintNo && sprintName) {
+         toast({
+            title: sprintName,
+            description: sprintNo,
+            duration: 3000,
+         });
+      }
+   };
    return (
       <DialogContent className='sm:max-w-[500px]'>
          <DialogHeader>
             <DialogTitle>Create Game</DialogTitle>
-            <DialogDescription>Make changes to your profile here. Click save when you're done.</DialogDescription>
+            <DialogDescription>Create your poker game here!</DialogDescription>
          </DialogHeader>
          <div className='grid gap-4 py-4'>
             <div className='grid grid-cols-4 items-center gap-4'>
                <Label htmlFor='name1' className='text-center'>
                   Sprint Name
                </Label>
-               <Input id='name1' placeholder="Enter name" className='col-span-3' />
+               <Input
+                  id='name1'
+                  placeholder='Enter name'
+                  className='col-span-3'
+                  onChange={(e) => {
+                     setSprintName(e.target.value);
+                  }}
+               />
             </div>
             <div className='grid grid-cols-4 items-center gap-4'>
                <Label htmlFor='name2' className='text-center'>
                   Sprint Number
                </Label>
-               <Select>
+               <Select
+                  onValueChange={(value) => {
+                     setSprintNo(value);
+                  }}>
                   <SelectTrigger className='col-span-3'>
                      <SelectValue placeholder='Select Sprint ...' />
                   </SelectTrigger>
@@ -37,7 +61,15 @@ const CreateGame = () => {
             </div>
          </div>
          <DialogFooter>
-            <Button type='submit'>Create Game</Button>
+            <Dialog.Close asChild>
+               <Button
+                  type='submit'
+                  onClick={() => {
+                     addGame();
+                  }}>
+                  Create Game
+               </Button>
+            </Dialog.Close>
          </DialogFooter>
       </DialogContent>
    );
