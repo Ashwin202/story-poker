@@ -1,4 +1,5 @@
 import TeamVoteSection from "@/components/TeamVoteSection";
+import BottomBar from "@/components/BottomBar";
 
 const page = () => {
 	const userdata = [
@@ -22,7 +23,7 @@ const page = () => {
 				</div>
 			</div>
 
-			<div className="w-full h-1/6 bg-gray-300 p-2" >Bottoms</div>
+			<div className="w-full h-1/6 bg-gray-300 p-2" ><BottomBar/></div>
 		</div>
 	);
 };
