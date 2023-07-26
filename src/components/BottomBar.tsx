@@ -15,7 +15,7 @@ interface VerdictProps {
 const Verdict: React.FC<VerdictProps> = ({verdict}) =>  {
   return (
     <div className= "w-16 h-16 flex justify-center items-center rounded-full text-center bg-slate-100"> 
-      <span className="text-4xl text-black" >{verdict} </span>
+      <span className="text-xl text-black" >{verdict} </span>
     </div>
   )
 }
@@ -26,13 +26,13 @@ const BottomBar = (props: BottomBarProps) => {
   const [timerReset,setTimerReset] = useState<boolean>(false)
   return (
     <TimerContext.Provider value = {{timerReset, setTimerReset}}>
-      <div className="h-24 w-full flex justify-start items-center flex-row">
+      <div className="h-full w-full flex items-center flex-row">
         <div className='w-1/4 flex justify-center flex-row'>
           <Verdict 
             verdict={finalStoryPoint}
           />
         </div>
-        <div className='w-1/4 flex justify-center'>
+        <div className='w-1/4 h-1/4 flex justify-center'>
           <CountdownTimer 
               targetTime={targetTime}
             />
@@ -48,8 +48,8 @@ const BottomBar = (props: BottomBarProps) => {
           </button>
         </div>
         <div className='w-1/4 flex justify-center' >
-            <button className='bg-blue-500 text-4xl rounded-lg text-black p-2 '>
-              <div>Next {'->'}</div>
+            <button className='bg-blue-500 text-lg rounded-lg text-black p-2 '>
+              <div><span>Next {'->'}</span></div>
             </button>
         </div>
       </div>
