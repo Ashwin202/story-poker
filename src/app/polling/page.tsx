@@ -1,5 +1,6 @@
 import TeamVoteSection from "@/components/TeamVoteSection";
 import BottomBar from "@/components/BottomBar";
+import TopBar from "@/components/TopBar";
 
 const page = () => {
 	const userdata = [
@@ -13,8 +14,8 @@ const page = () => {
 	];
 	return (
 		<div className="flex h-screen flex-col" style={{ border: "1px solid green" }}>
-			<div className=" w-full h-20 bg-red-300 p-2">Top</div>
-			<div className="flex w-full h-[calc(100%-13rem)] ">
+			<div className=" w-full h-16"><TopBar /></div>
+			<div className="flex w-full h-[calc(100%-12rem)] ">
 				<div className="flex flex-col w-5/6 p-2 ">
 					<div className="flex w-full text-black bg-blue-100  h-1/2 ">SPRINT DETAILS</div>
 					<div className="flex w-full text-black bg-green-100 h-1/2 ">CARD SELECTOR</div>
