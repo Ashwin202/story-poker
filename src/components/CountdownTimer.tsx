@@ -32,10 +32,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetTime }) => {
       <div className="relative">
         { timeLeft < warmAfter ? 
           <div className= "w-16 h-16 flex justify-center items-center rounded-full text-center ring-4 ring-red-500">
-            <span className="text-3xl text-red-500">{timeLeft}</span>
+            <span className="text-lg text-red-500">{timeLeft}</span>
           </div>: 
           <div className= "w-16 h-16 flex justify-center items-center rounded-full text-center ring-4 ring-blue-500">
-            <span className="text-3xl text-blue-500">{timeLeft}</span>
+            <span className="text-lg text-blue-500">{timeLeft}</span>
           </div>
         }
       </div>

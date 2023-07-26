@@ -13,17 +13,22 @@ const page = () => {
 	];
 	return (
 		<div className="flex h-screen flex-col" style={{ border: "1px solid green" }}>
-			<div className=" w-full h-1/6 bg-red-300 p-2" >
-				Top
-			</div>
-			<div className="flex w-full h-4/6 ">
-				<div className="flex w-5/6 bg-blue-300 p-2 ">Middle</div>
+			<div className=" w-full h-20 bg-red-300 p-2">Top</div>
+			<div className="flex w-full h-[calc(100%-13rem)] ">
+				<div className="flex flex-col w-5/6 p-2 ">
+					<div className="flex w-full text-black bg-blue-100  h-1/2 ">SPRINT DETAILS</div>
+					<div className="flex w-full text-black bg-green-100 h-1/2 ">CARD SELECTOR</div>
+				</div>
 				<div className="flex w-1/6 p-2">
 					<TeamVoteSection userdata={userdata} />
 				</div>
 			</div>
 
-			<div className="w-full h-1/6 bg-gray-300 p-2" ><BottomBar/></div>
+			<div className="flex flex-wrap justify-center content-center w-full h-32 p-2 ">
+				<div className="content-center w-1/2 h-1/2">
+					<BottomBar />
+				</div>
+			</div>
 		</div>
 	);
 };
