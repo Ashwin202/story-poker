@@ -31,7 +31,7 @@ import TeamVote from "./TeamVote"
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="bg-transparent hover:bg-transparent focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none ring-opacity-0"><TeamVote isActive={true} firstName="Admin" lastName="Name"/></Button>
+          <Button id="profile-id" variant="ghost" className="bg-transparent hover:bg-transparent focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none ring-opacity-0"><TeamVote isActive={true} firstName="Admin" lastName="Name"/></Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel>Hi Admin,</DropdownMenuLabel>

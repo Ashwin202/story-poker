@@ -1,0 +1,44 @@
+CREATE TABLE `ryng_poker` CHARACTER SET `utf8mb4`;
+
+CREATE TABLE `game`(
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `game_name` VARCHAR(255) NOT NULL UNIQUE KEY, 
+    `sprint_number` INT(10) NOT NULL,
+    `story_list` VARCHAR(255), 
+    `status` TINYINT(1), 
+    `start_time` TIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+    `end_time` TIME(6) NOT NULL DEFAULT, 
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `created_by` VARCHAR(100) REFERENCES `user`(id),
+    `current_story` INT(10)
+);
+
+CREATE TABLE `user`(
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `username` VARCHAR(100) NOT NULL UNIQUE KEY,
+    `password` VARCHAR(100) NOT NULL,
+    `usertype` TINYINT(1),
+    `status` TINYINT(1),
+    `full_name` VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE `story`(
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `story_name` VARCHAR(255) NOT NULL,
+    `story_description` VARCHAR(255),
+    `story_owner` VARCHAR(255) NOT NULL REFERENCES `user`(id),
+    `story_point` INT(10), 
+    `game_id` INT(10) NOT NULL REFERENCES `game`(id),
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `game_log`(
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `game_id` INT(10) NOT NULL REFERENCES `game`(id),
+    `created_by` VARCHAR(100) REFERENCES `user`(id),
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);

@@ -34,6 +34,7 @@ const CreateGame: React.FC = () => {
                </Label>
                <Input
                   id='name1'
+                  type="text" 
                   placeholder='Enter name'
                   className='col-span-3'
                   onChange={(e) => {

@@ -1,6 +1,7 @@
 import TeamVoteSection from "@/components/TeamVoteSection";
 import BottomBar from "@/components/BottomBar";
 import TopBar from "@/components/TopBar";
+import CardPickerContainer from "@/components/CardPickerContainer";
 
 const page = () => {
 	const userdata = [
@@ -13,12 +14,17 @@ const page = () => {
 		{ id: 6, firstName: "Nithin", lastName: "Prince", active: false, value: 0 },
 	];
 	return (
-		<div className="flex h-screen flex-col" style={{ border: "1px solid green" }}>
-			<div className=" w-full h-16"><TopBar /></div>
+		<div className="flex h-screen flex-col">
+			<div className=" w-full h-16">
+				<TopBar />
+			</div>
 			<div className="flex w-full h-[calc(100%-12rem)] ">
 				<div className="flex flex-col w-5/6 p-2 ">
-					<div className="flex w-full text-black   h-1/2 ">SPRINT DETAILS</div>
-					<div className="flex w-full text-black  h-1/2 ">CARD SELECTOR</div>
+					<div className="flex w-full dark:text-white text-black  h-1/2 ">SPRINT DETAILS</div>
+					<div className="flex flex-col w-full dark:text-white text-black h-1/2 ">
+						<span className="flex flex-wrap justify-center content-center p-2 w-full"> Please select One Card</span>
+						<CardPickerContainer />
+					</div>
 				</div>
 				<div className="flex w-1/6 p-2">
 					<TeamVoteSection userdata={userdata} />
