@@ -5,7 +5,7 @@ import CardPickerContainer from "@/components/CardPickerContainer";
 
 const page = () => {
 	const userdata = [
-		{ id: 1, firstName: "Ashok", lastName: "Mohanakumar", active: true, value: 1 },
+		{ id: 1, firstName: "Ashok", active: true, value: 1 },
 		{ id: 2, firstName: "Michael", lastName: "Teddy", active: true, value: 0 },
 		{ id: 3, firstName: "Steve", lastName: "Waltin", active: true, value: 0 },
 		{ id: 4, firstName: "Shabeer", lastName: "Mohammed", active: false, value: 0 },
