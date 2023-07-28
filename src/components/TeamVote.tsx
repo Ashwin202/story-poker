@@ -6,7 +6,7 @@ import TwoLetterWord from "./TwoLetterWord";
 interface TeamVoteProps {
 	isActive: boolean;
 	firstName: string;
-	lastName: string;
+	lastName?: string;
 }
 const TeamVote = (props: TeamVoteProps) => {
 	return (
