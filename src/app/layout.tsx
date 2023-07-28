@@ -2,7 +2,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "../components/ThemeProvider";
+import { PollingContextProvider } from "../store/contexts/PollingContext";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<ClerkProvider>
 				<body className={inter.className}>
 					<ThemeProvider forcedTheme={"dark"} attribute="class" defaultTheme="system" enableSystem={true}>
-						{children}
+						<PollingContextProvider>{children}</PollingContextProvider>
 					</ThemeProvider>
 				</body>
 			</ClerkProvider>

@@ -1,12 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import DiceAvatar from "./DiceAvatar";
 import TwoLetterWord from "./TwoLetterWord";
 
 interface TeamVoteProps {
 	isActive: boolean;
-
 	firstName: string;
 	lastName: string;
 }
