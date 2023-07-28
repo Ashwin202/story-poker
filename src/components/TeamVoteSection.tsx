@@ -3,10 +3,9 @@ import TeamVote from "@/components/TeamVote";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarImage } from "./ui/avatar";
 
 type PersonProps = {
-	userdata: {
+	userData: {
 		id: number;
 		firstName: string;
 		lastName?: string;
@@ -18,7 +17,7 @@ type PersonProps = {
 const TeamVoteSection = (props: PersonProps) => {
 	return (
 		<ScrollArea className="h-full w-full p-3 rounded-md border">
-			{props.userdata.map((props, index) => (
+			{props.userData.map((props, index) => (
 				<>
 					<div key={index} className="flex flex-row justify-between content-center gap-3 text-xs">
 						<div className="flex justify-center content-between gap-3 ">

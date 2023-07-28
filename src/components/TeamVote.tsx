@@ -4,8 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import TwoLetterWord from "./TwoLetterWord";
 
 interface TeamVoteProps {
-	isActive?: boolean;
-
+	isActive: boolean;
 	firstName: string;
 	lastName?: string;
 }
