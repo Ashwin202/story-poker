@@ -1,20 +1,9 @@
+'use client'
 import {
-    Cloud,
-    CreditCard,
-    Github,
-    Keyboard,
-    LifeBuoy,
     LogOut,
-    Mail,
-    MessageSquare,
-    Plus,
-    PlusCircle,
-    Settings,
     User,
-    UserPlus,
-    Users,
   } from "lucide-react"
-  
+  import { useSession, signIn, signOut } from "next-auth/react"
   import { Button } from "@/components/ui/button"
   import {
     DropdownMenu,
@@ -26,8 +15,13 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 import TeamVote from "./TeamVote"
+import { useEffect } from "react"
   
   export function UserProfileDropdown() {
+    // const { data: session } = useSession()
+    // useEffect(()=>{
+    //   console.log({session})
+    // },[])
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -44,7 +38,7 @@ import TeamVote from "./TeamVote"
       
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => signOut()}>
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
           </DropdownMenuItem>

@@ -16,7 +16,7 @@ export const PollingContext = createContext<pollingContextType | null>(null);
 export const PollingContextProvider = ({ children }: pollingContextProviderProps) => {
 	const [selectedCard, setSelectedCard] = useState<number | null>(() => {
 		// Get the initial value from localStorage (if available) or set to null
-		const storedValue = localStorage.getItem("selectedCard");
+		const storedValue = typeof window !== "undefined" ? localStorage.getItem("selectedCard") : null;
 		return storedValue ? JSON.parse(storedValue) : null;
 	});
 

@@ -38,7 +38,6 @@ const TopBar = () => {
                   <UserProfileDropdown />
                   </DropdownMenuTrigger>
                </DropdownMenu>
-               {/* </a> */}
             </div>
          </div>
       </nav>
