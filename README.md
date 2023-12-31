@@ -1,10 +1,10 @@
 # Story Poker
-
-## Real-Time Collaborative Story Point Estimation Tool
-
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)]()
 [![NEXTJS](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)]()
 [![SOCKET](https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white)]()
+
+## Real-Time Collaborative Story Point Estimation Tool
+
 
 <p align="center">
 <img width="750px" src="public/snapshot-polling-app.png" alt="Description of your image">
